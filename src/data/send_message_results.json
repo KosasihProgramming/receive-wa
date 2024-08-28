@@ -1,0 +1,24 @@
+[
+  {
+    "success": true,
+    "data": {
+      "status": "200",
+      "message": "The message is in the delivery process",
+      "worker_by": "veECpkJBvMQ0GFDE",
+      "ack": "successfully"
+    },
+    "nama": "RIZKI ANANDA PUTRI",
+    "no_telpon": ""
+  },
+  {
+    "success": true,
+    "data": {
+      "status": "200",
+      "message": "The message is in the delivery process",
+      "worker_by": "veECpkJBvMQ0GFDE",
+      "ack": "successfully"
+    },
+    "nama": "RIZKI ANANDA PUTRI",
+    "no_telpon": ""
+  }
+]
