@@ -65,7 +65,8 @@ exports.handleIncomingMessage = (req, res) => {
     dataReceive.message_body == "A." ||
     dataReceive.message_body == "A. Puas" ||
     dataReceive.message_body == "A.Puas" ||
-    dataReceive.message_body.includes("Puas")
+    dataReceive.message_body.includes("Puas")||
+    dataReceive.message_body.includes("puas")
   ) {
     const text = `Terima kasih atas penilaian Anda, 😊🙏 Kami senang Anda puas dengan pelayanan kami.\n\nJika berkenan, silakan beri komentar atau saran langsung lewat pesan ini, atau isi form di: https://bit.ly/form-penilaian-kosasih. Masukan Anda sangat berarti bagi kami.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
 
