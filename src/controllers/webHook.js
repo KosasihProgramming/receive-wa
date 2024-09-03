@@ -65,7 +65,7 @@ exports.handleIncomingMessage = (req, res) => {
     dataReceive.message_body == "A." ||
     dataReceive.message_body == "A. Puas" ||
     dataReceive.message_body == "A.Puas" ||
-    dataReceive.message_body == "Puas"
+    dataReceive.message_body.includes("Puas")
   ) {
     const text = `Terima kasih atas penilaian Anda, 😊🙏 Kami senang Anda puas dengan pelayanan kami.\n\nJika berkenan, silakan beri komentar atau saran langsung lewat pesan ini, atau isi form di: https://bit.ly/form-penilaian-kosasih. Masukan Anda sangat berarti bagi kami.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
 
@@ -74,12 +74,12 @@ exports.handleIncomingMessage = (req, res) => {
   if (
     dataReceive.message_body == "B" ||
     dataReceive.message_body == "B." ||
-    dataReceive.message_body == "Kurang puas" ||
+    dataReceive.message_body.includes("Kurang puas") ||
     dataReceive.message_body == "B. Kurang Puas" ||
     dataReceive.message_body == "B.Kurang Puas" ||
     dataReceive.message_body == "B. Kurang puas" ||
-    dataReceive.message_body == "B.Kurang puas" ||
-    dataReceive.message_body == "Kurang Puas" ||
+    dataReceive.message_body.includes("B.Kurang puas") ||
+    dataReceive.message_body.toLowerCase().includes("kurang puas") ||
     dataReceive.message_body == "Kurang puas"
   ) {
     const text = `Terima kasih atas tanggapan Anda🙏, Kami mohon maaf jika pelayanan kami belum memenuhi harapan Anda.\n\nKami sangat menghargai jika Anda dapat memberikan masukan lebih lanjut mengenai pengalaman Anda, agar kami bisa segera memperbaiki dan meningkatkan layanan kami. Silakan balas pesan ini atau isi form di: https://bit.ly/form-penilaian-kosasih.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
