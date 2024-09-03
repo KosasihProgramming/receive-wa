@@ -17,7 +17,7 @@ const PanjangRoute = require("./src/Routes/PanjangRoute");
 const TelukRoute = require("./src/Routes/TelukRoute");
 const PalapaRoute = require("./src/Routes/PalapaRoute");
 
-const port = 5005;
+const port = 5000;
 const app = express();
 
 app.use(bodyParser.json());
@@ -48,18 +48,18 @@ app.use(PalapaRoute);
 // Menjadwalkan cron job
 
 const urls = [
-  `http://localhost:5005/bugis/send`,
-  `http://localhost:5005/gading/send`,
-  `http://localhost:5005/kemiling/send`,
-  `http://localhost:5005/palapa/send`,
-  `http://localhost:5005/panjang/send`,
-  `http://localhost:5005/rajabasa/send`,
-  `http://localhost:5005/teluk/send`,
-  `http://localhost:5005/tirta/send`,
-  `http://localhost:5005/tugu/send`,
-  `http://localhost:5005/urip/send`,
-  `http://localhost:5005/gts-kemiling/send`,
-  `http://localhost:5005/gts-tirta/send`,
+  `http://localhost:5000/bugis/send`,
+  `http://localhost:5000/gading/send`,
+  `http://localhost:5000/kemiling/send`,
+  `http://localhost:5000/palapa/send`,
+  `http://localhost:5000/panjang/send`,
+  `http://localhost:5000/rajabasa/send`,
+  `http://localhost:5000/teluk/send`,
+  `http://localhost:5000/tirta/send`,
+  `http://localhost:5000/tugu/send`,
+  `http://localhost:5000/urip/send`,
+  `http://localhost:5000/gts-kemiling/send`,
+  `http://localhost:5000/gts-tirta/send`,
 ];
 
 let currentIndex = 0;

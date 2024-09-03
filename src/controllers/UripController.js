@@ -7,7 +7,7 @@ const {
   sendMessage,
 } = require("../functions/Utils.js");
 
-const port = 5005;
+const port = 5000;
 const token = "wFcCXiNy1euYho73dBGwkPhjjTdODzv6";
 const namaKlinik = "Klinik Pratama Kosasih Amanah";
 // const namaLab = "Laboratorium Kosasih bugis";
@@ -62,7 +62,7 @@ const sendWa = async (req, res) => {
     const fetch = (await import("node-fetch")).default;
 
     // Fetch data untuk setiap akun
-    const response = await fetch(`http://localhost:5005/urip/transaksi`);
+    const response = await fetch(`http://localhost:5000/urip/transaksi`);
     const dataResponse = await response.json();
 
     // Fungsi untuk menambahkan jeda waktu (delay)
@@ -86,7 +86,7 @@ const sendWa = async (req, res) => {
           results.push(result);
         }
         // Tambahkan jeda 10 menit (600000 milidetik)600000
-        await delay(15005); // 600,000 ms = 10 menit
+        await delay(15000); // 600,000 ms = 10 menit
       }
     } else {
       console.log("Data yang diterima bukan array:", dataResponse);

@@ -11,7 +11,7 @@ const {
   sendMessageWa,
 } = require("../functions/Utils.js");
 
-const port = 5005;
+const port = 5000;
 const token = "wFcCXiNy1euYho73dBGwkPhjjTdODzv6";
 const namaKlinik = "Klinik Pratama Kosasih Amanah";
 // const namaLab = "Laboratorium Kosasih bugis";
@@ -63,7 +63,7 @@ const getTransaksi = async (req, res) => {
 const sendWa = async (req, res) => {
   try {
     const fetch = (await import("node-fetch")).default;
-    const response = await fetch(`http://localhost:5005/bugis/transaksi`);
+    const response = await fetch(`http://localhost:5000/bugis/transaksi`);
     const dataResponse = await response.json();
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -85,7 +85,7 @@ const sendWa = async (req, res) => {
           // Push hasil dari sendMessageWa ke array results
           results.push(result);
         }
-        await delay(15005); // 15 detik jeda
+        await delay(15000); // 15 detik jeda
       }
     } else {
       console.log("Data yang diterima bukan array:", dataResponse);
