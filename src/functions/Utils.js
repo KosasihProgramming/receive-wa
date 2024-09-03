@@ -8,9 +8,8 @@ require("moment/locale/id"); // Mengimpor bahasa Indonesia untuk moment.js
 // Mengatur locale ke bahasa Indonesia
 moment.locale("id");
 
-const sendMessageWa = async (cabang, data) => {
-  const text = `Selamat datang di Klinik Kosasih ${cabang}, Bapak/Ibu ${data.nama} ☺️🙏 \n \n Terimakasih sudah percayakan Klinik Kosasih sebagai solusi pengobatan anda😊 \n \n  Bagaimana pelayanan di Klinik Kosasih ${cabang} ? \n *Silahkan ketik A atau B.*  \n A. Puas ✅ \n B. Kurang puas \n \n Jika berkenan, *tolong berikan alasan atas pilihan Anda Pada Link Dibawah Ini*. Sehat Selalu Bapak/Ibu. Terima kasih 😊👨‍⚕️👩‍⚕️ \nhttps://bit.ly/form-penilaian-kosasih`;
-
+const sendMessageWa = async (data) => {
+  const text = `Terima kasih atas penilaian Anda, 😊🙏 Kami senang Anda puas dengan pelayanan kami.\n\nJika berkenan, silakan beri komentar atau saran langsung lewat pesan ini, atau isi form di: https://bit.ly/form-penilaian-kosasih. Masukan Anda sangat berarti bagi kami.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
   try {
     const response = await axios.post(
       "https://api.watzap.id/v1/send_message",
@@ -32,7 +31,7 @@ const sendMessageWa = async (cabang, data) => {
     return {
       success: true,
       data: response.data,
-      nama: data.nama,
+      // nama: data.nama,
       no_telpon: data.no_telpon,
     };
   } catch (error) {
@@ -40,7 +39,7 @@ const sendMessageWa = async (cabang, data) => {
     return {
       success: false,
       error: error.message,
-      nama: data.nama,
+      // nama: data.nama,
       no_telpon: data.no_telpon,
     };
   }

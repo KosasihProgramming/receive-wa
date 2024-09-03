@@ -23,7 +23,7 @@
 // };
 
 const path = require("path");
-const { sendMessage } = require("../functions/Utils");
+const { sendMessage, sendMessageWa } = require("../functions/Utils");
 const fs = require("fs");
 
 exports.handleIncomingMessage = (req, res) => {
@@ -36,7 +36,8 @@ exports.handleIncomingMessage = (req, res) => {
   if (
     dataReceive.is_from_me == false &&
     dataReceive.name !== "status" &&
-    dataReceive.message_body !== ""
+    dataReceive.message_body !== "" &&
+    dataReceive.message_body !== undefined
   ) {
     const text = `<b>Chat Dari Pasien </b>\n<b>No. WA. Pasien :</b> ${dataReceive.name} \n<b>Pesan</b> : ${dataReceive.message_body}`;
 
@@ -57,5 +58,15 @@ exports.handleIncomingMessage = (req, res) => {
           error: error.message,
         });
       });
+  }
+
+  if (
+    dataReceive.message_body == "A" ||
+    dataReceive.message_body == "A." ||
+    dataReceive.message_body == "A. Puas" ||
+    dataReceive.message_body == "A.Puas" ||
+    dataReceive.message_body == "Puas"
+  ) {
+    sendMessageWa({ no_telpon: dataReceive.name });
   }
 };
