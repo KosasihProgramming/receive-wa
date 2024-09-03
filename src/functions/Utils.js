@@ -8,8 +8,7 @@ require("moment/locale/id"); // Mengimpor bahasa Indonesia untuk moment.js
 // Mengatur locale ke bahasa Indonesia
 moment.locale("id");
 
-const sendMessageWa = async (data) => {
-  const text = `Terima kasih atas penilaian Anda, 😊🙏 Kami senang Anda puas dengan pelayanan kami.\n\nJika berkenan, silakan beri komentar atau saran langsung lewat pesan ini, atau isi form di: https://bit.ly/form-penilaian-kosasih. Masukan Anda sangat berarti bagi kami.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
+const sendMessageWa = async (data, text) => {
   try {
     const response = await axios.post(
       "https://api.watzap.id/v1/send_message",
