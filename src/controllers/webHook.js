@@ -63,10 +63,8 @@ exports.handleIncomingMessage = (req, res) => {
   if (
     dataReceive.is_from_me == false &&
     dataReceive.name !== "status" &&
-    dataReceive.message_body !== "" &&
-    dataReceive.message_body !== undefined &&
-    dataReceive.message_body == "A" &&
     (dataReceive.message_body == "A." ||
+      dataReceive.message_body == "A" ||
       dataReceive.message_body == "A. Puas" ||
       dataReceive.message_body == "A.Puas" ||
       dataReceive.message_body.includes("Puas") ||
@@ -79,9 +77,6 @@ exports.handleIncomingMessage = (req, res) => {
   if (
     dataReceive.is_from_me == false &&
     dataReceive.name !== "status" &&
-    dataReceive.message_body !== "" &&
-    dataReceive.message_body !== undefined &&
-    dataReceive.message_body == "A" &&
     (dataReceive.message_body == "B" ||
       dataReceive.message_body == "B." ||
       dataReceive.message_body.includes("Kurang puas") ||
