@@ -70,7 +70,7 @@ exports.handleIncomingMessage = (req, res) => {
   ) {
     const text = `Terima kasih atas penilaian Anda, 😊🙏 Kami senang Anda puas dengan pelayanan kami.\n\nJika berkenan, silakan beri komentar atau saran langsung lewat pesan ini, atau isi form di: https://bit.ly/form-penilaian-kosasih. Masukan Anda sangat berarti bagi kami.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
 
-    sendMessageWa({ no_telpon: dataReceive.name }, text);
+    // sendMessageWa({ no_telpon: dataReceive.name }, text);
   }
   if (
     dataReceive.message_body == "B" ||
@@ -85,6 +85,6 @@ exports.handleIncomingMessage = (req, res) => {
   ) {
     const text = `Terima kasih atas tanggapan Anda🙏, Kami mohon maaf jika pelayanan kami belum memenuhi harapan Anda.\n\nKami sangat menghargai jika Anda dapat memberikan masukan lebih lanjut mengenai pengalaman Anda, agar kami bisa segera memperbaiki dan meningkatkan layanan kami. Silakan balas pesan ini atau isi form di: https://bit.ly/form-penilaian-kosasih.\nSehat selalu untuk Anda dan keluarga! 🌿👨‍⚕️👩‍⚕️`;
 
-    sendMessageWa({ no_telpon: dataReceive.name }, text);
+    // sendMessageWa({ no_telpon: dataReceive.name }, text);
   }
 };
